@@ -9,3 +9,17 @@ Interpretation of Legal documents
 ```
 pip install poetry
 ```
+
+## Usage
+
+Install package
+```
+poetry install
+```
+
+### Converting PDFs to text
+
+Run the command below to understand the usage of the file
+```
+poetry run ./scripts/pdf2txt.py --help
+```
