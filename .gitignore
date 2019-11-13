@@ -1,1 +1,4 @@
 dist/
+lglint.egg-info/
+poetry.lock
+scripts/__pycache__/
