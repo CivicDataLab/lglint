@@ -35,4 +35,3 @@ if __name__ == "__main__":
             with open(ofile, "w+") as out_file:
                 text = "".join(pdf)
                 out_file.write(text)
-#            subprocess.call(['pdftotext', '-enc', 'UTF-8',  ifile, ofile])
