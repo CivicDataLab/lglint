@@ -21,5 +21,5 @@ poetry install
 
 Run the command below to understand the usage of the file
 ```
-poetry run ./scripts/pdf2txt.py --help
+poetry run python scripts/pdf2txt.py --help
 ```
