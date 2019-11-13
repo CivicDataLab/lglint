@@ -1,0 +1,23 @@
+[[package]]
+category = "main"
+description = "Pythonic argument parser, that will make you smile"
+name = "docopt"
+optional = false
+python-versions = "*"
+version = "0.6.2"
+
+[[package]]
+category = "main"
+description = "Simple PDF text extraction"
+name = "pdftotext"
+optional = false
+python-versions = "*"
+version = "2.1.2"
+
+[metadata]
+content-hash = "b1a972dfb5168fc15aadd964694546f0911f4a89b7b7e90c67ec72ef92f6e027"
+python-versions = "^3.6"
+
+[metadata.hashes]
+docopt = ["49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"]
+pdftotext = ["c8bdc47b08baa17b8e03ba1f960fc6335b183d2644eaf7300e088516758a6090"]
