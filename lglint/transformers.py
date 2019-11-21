@@ -14,7 +14,7 @@ def convert_to_cheyyali_format(text: str) -> Dict:
     for ent in doc.ents:
         label = [ent.start_char, ent.end_char, ent.label_]
         all_labels.append(label)
-    ent_dict["text"] = (text,)
+    ent_dict["text"] = text
     ent_dict["labels"] = all_labels
 
     return ent_dict
