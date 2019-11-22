@@ -1,12 +1,15 @@
-from typing import Dict
+from typing import Dict, Mapping
 import spacy
 
 nlp = spacy.load("en_blackstone_proto")
 
 
-def convert_to_cheyyali_format(text: str) -> Dict:
+def convert_to_cheyyali_format(text: str) -> Dict[str, Mapping[str, List[List[str]]]]:
     """
-    convert texts to jsonl format for cheyyali annotator
+    Convert texts to jsonl format for cheyyali annotator
+
+    Parameters:
+            text: the input text that you want to convert to cheyyali's format
     """
     doc = nlp(text)
     ent_dict = {}
