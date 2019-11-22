@@ -33,5 +33,5 @@ if __name__ == "__main__":
                     print("the file " + ifile + " looks corrupted")
                     pass
             with open(ofile, "w+") as out_file:
-                text = "".join(pdf)
+                text = "\n\n".join(pdf)
                 out_file.write(text)
