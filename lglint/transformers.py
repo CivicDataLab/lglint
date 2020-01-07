@@ -1,4 +1,4 @@
-from typing import Dict, Mapping
+from typing import List, Dict, Mapping
 import spacy
 
 nlp = spacy.load("en_blackstone_proto")
