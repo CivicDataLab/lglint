@@ -6,6 +6,8 @@ data/
 concatenate_files.sh
 notes.md
 .ipynb_checkpoints/
+*.csv
+*.json
 tags
 in/
 out/
