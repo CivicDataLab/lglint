@@ -14,10 +14,26 @@ optional = false
 python-versions = "*"
 version = "2.1.2"
 
-[metadata]
-content-hash = "b1a972dfb5168fc15aadd964694546f0911f4a89b7b7e90c67ec72ef92f6e027"
-python-versions = "^3.6"
+[[package]]
+category = "main"
+description = "A simple configuration file manager for python"
+name = "simple-config"
+optional = false
+python-versions = "*"
+version = "1.0.1"
 
-[metadata.hashes]
-docopt = ["49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"]
-pdftotext = ["c8bdc47b08baa17b8e03ba1f960fc6335b183d2644eaf7300e088516758a6090"]
+[metadata]
+content-hash = "9b22929f58ed91987c3c0cf9f3b5286c8134e8c91508511a7186775835463ad8"
+python-versions = "^3.8"
+
+[metadata.files]
+docopt = [
+    {file = "docopt-0.6.2.tar.gz", hash = "sha256:49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"},
+]
+pdftotext = [
+    {file = "pdftotext-2.1.2.tar.gz", hash = "sha256:c8bdc47b08baa17b8e03ba1f960fc6335b183d2644eaf7300e088516758a6090"},
+]
+simple-config = [
+    {file = "simple-config-1.0.1.linux-x86_64.tar.gz", hash = "sha256:b9588085ebb82a9b6ec21d60917c908acda68da6473eb2ac6178f9f3b59ebf16"},
+    {file = "simple_config-1.0.1-py2.py3-none-any.whl", hash = "sha256:06e62440ae51a49073935d84cf21d2fb3c812d3bec6dce392e0b36cd4e1f487c"},
+]
