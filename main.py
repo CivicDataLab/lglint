@@ -13,7 +13,7 @@ pipeline \
     .add(ConcatenateMetaDataOfState(base_data_dir="/home/dc/Documents/civicdatalab/judiciary/data/pocso/",
                                     state='Delhi',
                                     out_file='delhi_metadata.csv')) \
-    .add(FilterByCaseType(case_type=['SC', 'Cr. Case', 'CC'])) \
+    .add(FilterByCaseType(case_types=['SC', 'Cr. Case', 'CC'])) \
     .add(SampleNCases(number_of_cases=30)) \
     .add(CopyFilteredJudgements(source='/home/dc/Documents/civicdatalab/judiciary/data/pocso/',
                                 destination=os.path.join(os.path.dirname(__file__), 'input'))) \

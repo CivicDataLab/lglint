@@ -7,9 +7,9 @@ class FilterByCaseType(Task):
     shared_resource: pd.DataFrame
     case_types: list
 
-    def __init__(self, case_type: list):
+    def __init__(self, case_types: list):
         super().__init__()
-        self.case_types = case_type
+        self.case_types = case_types
 
     def execute(self):
         assert isinstance(self.shared_resource, pd.DataFrame)
