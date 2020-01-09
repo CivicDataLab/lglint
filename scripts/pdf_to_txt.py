@@ -26,4 +26,4 @@ class Pdf2Txt(Task):
                             text = "".join(pdf)
                             out_file.write(text)
                     except pdftotext.Error:
-                        print("the file " + ifile + " looks corrupted")
+                        print('the file {} looks corrupted'.format(ifile))
