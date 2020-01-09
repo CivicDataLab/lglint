@@ -6,7 +6,7 @@ authors = ["Samantar <samantar@civicdatalab.in>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.8"
 docopt = "^0.6.2"
 pdftotext = "^2.1"
 
