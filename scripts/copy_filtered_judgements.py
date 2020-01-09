@@ -1,3 +1,6 @@
+"""
+Task to copy the filtered judgements to common place for further processing
+"""
 import os
 from shutil import copyfile
 

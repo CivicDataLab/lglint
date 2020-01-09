@@ -1,3 +1,6 @@
+"""
+Module to create and run pipeline for pocso judgement processing for HAQ
+"""
 import os
 
 from config import settings

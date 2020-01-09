@@ -4,7 +4,9 @@ from scripts.task import Task
 
 
 class FilterByCaseType(Task):
-    shared_resource: pd.DataFrame
+    """
+    :case_types: List of case types to be filtered
+    """
     case_types: list
 
     def __init__(self, case_types: list):

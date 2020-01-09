@@ -1,3 +1,7 @@
+"""
+Class to concatenate the metadata of all the judgements to a single csv file
+"""
+
 import json
 import os
 
@@ -15,6 +19,9 @@ class ConcatenateMetaDataOfState(Task):
         self.base_data_dir = base_data_dir
 
     def execute(self):
+        """
+        Task iterates through all the folders of input directory and creates a CSV file with combined metadata
+        """
         metadata = []
         for root, dirs, files in os.walk(self.base_data_dir + self.state):
             for file in files:
