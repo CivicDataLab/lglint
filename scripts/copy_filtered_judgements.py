@@ -15,7 +15,7 @@ class CopyFilteredJudgements(Task):
         self.source = source
         self.destination = destination
 
-    def execute(self):
+    def _execute(self):
         assert isinstance(self.shared_resource, pd.DataFrame)
         case_numbers = self.shared_resource['case_no'].tolist()
         # for ci in case_numbers:

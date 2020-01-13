@@ -8,8 +8,12 @@ class Task(abc.ABC):
         self.shared_resource = None
 
     @abc.abstractmethod
-    def execute(self):
+    def _execute(self):
         pass
+
+    def execute(self):
+        self.share_next(self.shared_resource)
+        self._execute()
 
     def execute_chain(self):
         self.execute()
