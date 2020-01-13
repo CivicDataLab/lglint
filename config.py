@@ -9,7 +9,8 @@ default_settings = {
     'judgements_case_types': ['case_type'],
     'combined_metadata_file': 'metadata.csv',
     "all_judgements_pdf_directory": "input",
-    "all_judgements_txt_directory": "output"
+    "all_judgements_txt_directory": "output",
+    "final_cheyyali_judgements": "cheyyali_judgements.json"
 }
 config_file = os.path.join(os.path.dirname(__file__), 'config.json')
 settings = Config(config_file, defaults=default_settings)
