@@ -33,7 +33,6 @@ class Pdf2Txt(Task):
                     except pdftotext.Error:
                         print('the file {} looks corrupted'.format(in_file))
 
-
     @staticmethod
     def _remove_footer(filename, page):
         # if re.search(FOOTER_PATTERN, page):
