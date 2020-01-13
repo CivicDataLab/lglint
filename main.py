@@ -5,6 +5,7 @@ import os
 
 from config import settings
 from scripts.concatenate_metadata_of_state import ConcatenateMetaDataOfState
+from scripts.convert_to_cheyyali_format import ConvertToCheyyaliFormat
 from scripts.copy_filtered_judgements import CopyFilteredJudgements
 from scripts.filter_by_case_type import FilterByCaseType
 from scripts.pdf_to_txt import Pdf2Txt
@@ -22,6 +23,7 @@ pipeline \
     .add(FilterByCaseType(case_types=settings.judgements_case_types)) \
     .add(SampleNCases(number_of_cases=settings.number_of_sample_judgements)) \
     .add(CopyFilteredJudgements(source=settings.base_data_dir, destination=all_judgements_pdf_directory)) \
-    .add(Pdf2Txt(all_judgements_pdf_directory, all_judgements_txt_directory))
+    .add(Pdf2Txt(all_judgements_pdf_directory, all_judgements_txt_directory)) \
+    .add(ConvertToCheyyaliFormat(input_dir=all_judgements_txt_directory, out_file=settings.final_cheyyali_judgements))
 
 pipeline.execute()
