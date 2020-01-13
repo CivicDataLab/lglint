@@ -9,10 +9,11 @@ Options:
     --odir=<od>     Provide output directory that should have the output files
     --enc=<e>       Provide the required encoding. By default it is UTF-8
 """
-from docopt import docopt
-import subprocess
 import os
+import subprocess
+
 import pdftotext
+from docopt import docopt
 
 if __name__ == "__main__":
     args = docopt(__doc__)

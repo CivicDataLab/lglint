@@ -2,3 +2,15 @@ dist/
 lglint.egg-info/
 poetry.lock
 scripts/__pycache__/
+lglint/__pycache__/
+data/
+concatenate_files.sh
+notes.md
+.ipynb_checkpoints/
+*.csv
+*.json
+tags
+in/
+out/
+.idea/
+config.json
