@@ -8,7 +8,7 @@ class SampleNCases(Task):
         super().__init__()
         self.number_of_cases = number_of_cases
 
-    def execute(self):
+    def _execute(self):
         assert isinstance(self.shared_resource, pd.DataFrame)
         filtered_df = self.shared_resource.sample(self.number_of_cases)
         self.share_next(filtered_df)

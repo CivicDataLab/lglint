@@ -13,7 +13,7 @@ class FilterByCaseType(Task):
         super().__init__()
         self.case_types = case_types
 
-    def execute(self):
+    def _execute(self):
         assert isinstance(self.shared_resource, pd.DataFrame)
         filtered_df = self.shared_resource[self.shared_resource['type_name'].isin(self.case_types)]
         self.share_next(filtered_df)

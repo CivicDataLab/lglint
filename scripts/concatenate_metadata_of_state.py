@@ -18,7 +18,7 @@ class ConcatenateMetaDataOfState(Task):
         self.state = state
         self.base_data_dir = base_data_dir
 
-    def execute(self):
+    def _execute(self):
         """
         Task iterates through all the folders of input directory and creates a CSV file with combined metadata
         """
