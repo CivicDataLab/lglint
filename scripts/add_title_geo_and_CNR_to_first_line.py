@@ -31,8 +31,5 @@ class AddTitleGeoCNRToFirstLine(Task):
         petitioner = case['petparty_name'].item()
         respondent = case['resparty_name'].item()
         court = case['court_name'].item()
-        case_number = case['reg_no'].item()
-        year = case['reg_year'].item()
-        status = 'Pending' if case['disp_nature'].item() == 0 else "Disposed"
 
-        return "{} - {} vs {} - {} - {} - {} - {}".format(CNR, petitioner, respondent, court, case_number, year, status)
+        return "{} - {} vs {} - {}".format(CNR, petitioner, respondent, court)
