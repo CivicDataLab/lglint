@@ -46,7 +46,7 @@ class Pdf2Txt(Task):
         # else:
         #     raise Exception({'page': page, 'file': filename})
         if page.split('\n')[-1] == "":
-            return "\n".join(page.split('\n')[0:-2])
+            return "\n".join(page.split('\n')[0:-2]) + "\n"
         else:
             raise Exception({'page': page, 'file': filename})
 
