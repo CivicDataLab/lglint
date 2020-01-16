@@ -12,7 +12,7 @@ class ConvertToCheyyaliFormat(Task):
         self.out_file = out_file
         self.input_dir = input_dir
 
-    def execute(self):
+    def _execute(self):
         for filename in os.listdir(self.input_dir):
             if filename.endswith(".txt"):
                 judgement = os.path.join(self.input_dir, filename)
