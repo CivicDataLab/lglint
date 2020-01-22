@@ -29,7 +29,7 @@ class Pdf2Txt(Task):
                         text = ""
                         with open(out_file, "w+") as out_file:
                             for page in pdf:
-                                text = self.clean_page(filename, page)
+                                text += self.clean_page(filename, page)
                                 # text = "".join(pdf)  # Join all the pages
                             out_file.write(text)
                     except pdftotext.Error:
