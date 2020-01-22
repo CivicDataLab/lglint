@@ -2,6 +2,7 @@ import os
 
 import pandas as pd
 
+from scripts.Constants import METADATA
 from scripts.task import Task
 
 
@@ -12,12 +13,13 @@ class AddTitleGeoCNRToFirstLine(Task):
         self.input_dir = input_dir
 
     def _execute(self):
-        assert isinstance(self.shared_resource, pd.DataFrame)
+        metadata = self.shared_resources[METADATA]
+        assert isinstance(metadata, pd.DataFrame)
         for filename in os.listdir(self.input_dir):
             if filename.endswith(".txt"):
                 judgement = os.path.join(self.input_dir, filename)
                 case_number = filename.split('_')[0]
-                case = self.shared_resource[self.shared_resource['case_no'] == int(case_number)]
+                case = metadata[metadata['case_no'] == int(case_number)]
                 title = self._get_case_title(case)
                 with open(judgement, "r+") as input_file:
                     judgement = input_file.read()

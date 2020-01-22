@@ -7,6 +7,7 @@ import os
 
 import pandas
 
+from scripts.Constants import METADATA
 from scripts.task import Task
 
 
@@ -31,5 +32,5 @@ class ConcatenateMetaDataOfState(Task):
                         data = json.load(f)
                         metadata.append(data)
         df = pandas.DataFrame.from_records(metadata).fillna(0)
-        self.share_next(df)
+        self.share_next(key=METADATA, resource=df)
         df.to_csv(self.base_data_dir + self.out_file, index=False)
