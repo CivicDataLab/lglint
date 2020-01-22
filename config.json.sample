@@ -6,5 +6,6 @@
     'combined_metadata_file': 'metadata.csv',
     "all_judgements_pdf_directory": "input",
     "all_judgements_txt_directory": "output",
-    "final_cheyyali_judgements": "cheyyali_judgements.json"
+    "final_cheyyali_judgements": "cheyyali_judgements.json",
+    "cnr_list": ["cnr_number"]
 }
