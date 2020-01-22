@@ -1,9 +1,10 @@
 import pandas as pd
 
+from scripts.Constants import METADATA
 from scripts.task import Task
 
 
-class FilterByCaseType(Task):
+class FilterMetaDataByCaseType(Task):
     """
     :case_types: List of case types to be filtered
     """

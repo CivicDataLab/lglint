@@ -1,7 +1,7 @@
 from scripts.task import Task
 
 
-class FilterByCNR(Task):
+class FilterMetaDataByCNR(Task):
 
     def __init__(self, cnr_list: list):
         super().__init__()
