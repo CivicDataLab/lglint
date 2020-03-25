@@ -23,9 +23,13 @@ pipeline \
                                     out_file=settings.combined_metadata_file)) \
     .add(FilterMetaDataByCaseType(case_types=settings.judgements_case_types)) \
     .add(SampleNCases(number_of_cases=settings.number_of_sample_judgements)) \
-    .add(CopyFilteredJudgements(source=settings.base_data_dir, destination=all_judgements_pdf_directory)) \
+    .add(CopyFilteredJudgements(source=settings.base_data_dir,
+                                destination=all_judgements_pdf_directory)) \
     .add(Pdf2Txt(all_judgements_pdf_directory, all_judgements_txt_directory)) \
-    .add(AddTitleGeoCNRToFirstLine(input_dir=all_judgements_txt_directory))\
-    .add(ConvertToCheyyaliFormat(input_dir=all_judgements_txt_directory, out_file=settings.final_cheyyali_judgements))
+    .add(AddTitleGeoCNRToFirstLine(input_dir=all_judgements_txt_directory,
+                                   pattern=r'(.*)_\d\.txt')) \
+    .add(ConvertToCheyyaliFormat(input_dir=all_judgements_txt_directory,
+                                 out_file=settings.final_cheyyali_judgements,
+                                 pattern=r'(.*)_\d\.txt'))
 
 pipeline.execute()

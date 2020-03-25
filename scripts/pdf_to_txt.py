@@ -19,7 +19,7 @@ class Pdf2Txt(Task):
     def _execute(self):
         for filename in os.listdir(self.input_dir):
             if filename.endswith(".pdf"):
-                out_file = filename.split(".")[0] + ".txt"
+                out_file = ".".join(filename.split(".")[:-1]) + ".txt"
                 if self.output_dir:
                     out_file = os.path.join(self.output_dir, out_file)
                 in_file = os.path.join(self.input_dir, filename)
