@@ -26,7 +26,7 @@ class ConcatenateMetaDataOfState(Task):
         metadata = []
         for root, dirs, files in os.walk(self.base_data_dir + self.state):
             for sub_file in files:
-                if sub_file.endswith('.json'):
+                if sub_file.endswith('_parsed.json'):
                     path_file = os.path.join(root, sub_file)
                     with open(path_file) as f:
                         data = json.load(f)
