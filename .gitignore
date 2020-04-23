@@ -14,3 +14,7 @@ in/
 out/
 .idea/
 config.json
+
+__pycache__/
+*.pdf
+*.txt
