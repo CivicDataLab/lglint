@@ -14,3 +14,4 @@ class SampleNCases(Task):
         assert isinstance(metadata, pd.DataFrame)
         filtered_df = metadata.sample(self.number_of_cases)
         self.share_next(key=METADATA, resource=filtered_df)
+

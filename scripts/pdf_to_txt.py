@@ -20,12 +20,14 @@ class Pdf2Txt(Task):
         for filename in os.listdir(self.input_dir):
             if filename.endswith(".pdf"):
                 out_file = ".".join(filename.split(".")[:-1]) + ".txt"
+
                 if self.output_dir:
                     out_file = os.path.join(self.output_dir, out_file)
                 in_file = os.path.join(self.input_dir, filename)
                 with open(in_file, "rb") as input_file:
                     try:
                         pdf = pdftotext.PDF(input_file, "UTF-8")
+
                         text = ""
                         with open(out_file, "w+") as out_file:
                             for page in pdf:
