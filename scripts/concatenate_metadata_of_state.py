@@ -7,6 +7,7 @@ import os
 
 import pandas
 
+from scripts.Constants import METADATA
 from scripts.task import Task
 
 
@@ -25,11 +26,11 @@ class ConcatenateMetaDataOfState(Task):
         metadata = []
         for root, dirs, files in os.walk(self.base_data_dir + self.state):
             for sub_file in files:
-                if sub_file.endswith('.json'):
+                if sub_file.endswith('_parsed.json'):
                     path_file = os.path.join(root, sub_file)
                     with open(path_file) as f:
                         data = json.load(f)
                         metadata.append(data)
         df = pandas.DataFrame.from_records(metadata).fillna(0)
-        self.share_next(df)
+        self.share_next(key=METADATA, resource=df)
         df.to_csv(self.base_data_dir + self.out_file, index=False)

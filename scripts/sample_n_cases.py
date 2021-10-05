@@ -1,5 +1,6 @@
 import pandas as pd
 
+from scripts.Constants import METADATA
 from scripts.task import Task
 
 
@@ -9,6 +10,8 @@ class SampleNCases(Task):
         self.number_of_cases = number_of_cases
 
     def _execute(self):
-        assert isinstance(self.shared_resource, pd.DataFrame)
-        filtered_df = self.shared_resource.sample(self.number_of_cases)
-        self.share_next(filtered_df)
+        metadata = self.shared_resources[METADATA]
+        assert isinstance(metadata, pd.DataFrame)
+        filtered_df = metadata.sample(self.number_of_cases)
+        self.share_next(key=METADATA, resource=filtered_df)
+
