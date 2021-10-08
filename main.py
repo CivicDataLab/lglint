@@ -26,6 +26,7 @@ pipeline \
     .add(CopyFilteredJudgements(source=settings.base_data_dir,
                                 destination=all_judgements_pdf_directory)) \
     .add(Pdf2Txt(all_judgements_pdf_directory, all_judgements_txt_directory)) \
+
     .add(AddTitleGeoCNRToFirstLine(input_dir=all_judgements_txt_directory,
                                 pattern=r'(.*)_\d\.txt')) \
     .add(ConvertToCheyyaliFormat(input_dir=all_judgements_txt_directory,

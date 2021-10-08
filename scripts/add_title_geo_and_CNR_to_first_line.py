@@ -1,4 +1,5 @@
 import os
+
 import re
 
 import pandas as pd
@@ -8,7 +9,9 @@ from scripts.task import Task
 from scripts.util import get_target_case
 
 
+
 class AddTitleGeoCNRToFirstLine(Task):
+
 
     def __init__(self, input_dir: str, pattern: str, use_cnr: bool = False):
         super().__init__()
@@ -34,11 +37,17 @@ class AddTitleGeoCNRToFirstLine(Task):
                         input_file.write("{} ||| {}".format(title, judgement))
                         input_file.truncate()
 
+
     @staticmethod
     def _get_case_title(case):
         CNR = case['cino'].item()
         petitioner = case['petparty_name'].item()
         respondent = case['resparty_name'].item()
         court = case['court_name'].item()
+        case_number = case['reg_no'].item()
+        year = case['reg_year'].item()
+        status = 'Pending' if case['disp_nature'].item() == 0 else "Disposed"
 
         return "{} - {} vs {} - {}".format(CNR, petitioner, respondent, court)
+        //return "{} - {} vs {} - {} - {} - {} - {}".format(CNR, petitioner, respondent, court, case_number, year, status)
+

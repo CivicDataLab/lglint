@@ -12,7 +12,9 @@ class Task(abc.ABC):
         pass
 
     def execute(self):
-        self._forward_resources()
+
+        self.share_next(self.shared_resource)
+
         self._execute()
 
     def execute_chain(self):
@@ -30,6 +32,7 @@ class Task(abc.ABC):
 
     def _set_shared_resource(self, key, resource):
         self.shared_resources[key] = resource
+
 
     def _set_shared_resources(self, resources):
         self.shared_resources = resources

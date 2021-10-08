@@ -17,9 +17,12 @@ class CopyFilteredJudgements(Task):
         self.destination = destination
 
     def _execute(self):
+
         metadata = self.shared_resources[METADATA]
         assert isinstance(metadata, pd.DataFrame)
-        # case_numbers = metadata['case_no'].tolist()
+
+        case_numbers = self.shared_resource['case_no'].tolist()
+
         # for ci in case_numbers:
         for root, dirs, files in os.walk(self.source):
             for file in files:

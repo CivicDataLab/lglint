@@ -18,4 +18,5 @@ class FilterMetaDataByCaseType(Task):
         metadata = self.shared_resources[METADATA]
         assert isinstance(metadata, pd.DataFrame)
         filtered_df = metadata[metadata['type_name'].isin(self.case_types)]
+        
         self.share_next(key=METADATA, resource=filtered_df)
